@@ -1,0 +1,58 @@
+<app-header backbutton="/orders" title="Detalles"></app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pedido #{{ pedido.id }}</ion-card-title>
+      <ion-card-subtitle>{{ pedido.estado }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          <h2>Cliente</h2>
+          <p>{{ pedido.cliente.nombre }}</p>
+        </ion-label>
+        <ion-button fill="outline" slot="end" color="primary">
+          <ion-icon name="call-outline"></ion-icon> Llamar
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h2>Teléfono</h2>
+          <p>{{ pedido.cliente.telefono }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h2>Dirección de Entrega</h2>
+          <p>{{ pedido.cliente.direccion }}</p>
+        </ion-label>
+        <ion-button
+          fill="outline"
+          slot="end"
+          color="success"
+          href="/main/orders/navegations"
+        >
+          <ion-icon name="navigate-outline"></ion-icon> Navegar
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h2>Notas</h2>
+          <p>{{ pedido.notas }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h2>Hora Estimada de Entrega</h2>
+          <p>{{ pedido.horaEntrega }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

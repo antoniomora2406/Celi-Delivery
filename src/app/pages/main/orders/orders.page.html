@@ -1,0 +1,107 @@
+<app-header  title="Pedidos"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-segment
+    [(ngModel)]="selectedSegment"
+    (ionChange)="onSegmentChanged($event)"
+  >
+    <ion-segment-button value="activos">
+      <ion-label>Nuevos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pedidos">
+      <ion-label>En curso</ion-label>
+    </ion-segment-button>
+    <!-- <ion-segment-button value="anteriores">
+      <ion-label>Anteriores</ion-label>
+    </ion-segment-button> -->
+  </ion-segment>
+
+  <!-- <app-nuevos *ngIf="selectedSegment === 'activos'"></app-nuevos> -->
+  <ion-card class="pedido-card" *ngIf="selectedSegment === 'activos'">
+    <ion-card-header>
+      <ion-card-title>Pedido de Celi</ion-card-title>
+      <ion-card-subtitle>Restaurante: Pizza Nova</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="pedido-info">
+        <div class="pedido-detalle">
+          <p><strong>Plato:</strong> Pizza Margarita</p>
+          <p><strong>Cantidad:</strong> 2</p>
+          <p><strong>Precio:</strong> $25.00</p>
+        </div>
+        <div class="pedido-detalle">
+          <p><strong>Plato:</strong> Alitas BBQ</p>
+          <p><strong>Cantidad:</strong> 1</p>
+          <p><strong>Precio:</strong> $15.00</p>
+        </div>
+      </div>
+      <ion-item lines="none" class="total">
+        <ion-label><strong>Total:</strong></ion-label>
+        <ion-note slot="end"><strong>$40.00</strong></ion-note>
+      </ion-item>
+      <div class="botones">
+        <ion-button color="success" expand="block" routerLink="details"
+          >Confirmar Pedido</ion-button
+        >
+        <ion-button color="danger" expand="block">Cancelar Pedido</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="pedido-card" *ngIf="selectedSegment === 'activos'">
+    <ion-card-header>
+      <ion-card-title>Pedido de Celi</ion-card-title>
+      <ion-card-subtitle>Restaurante: Pizza Nova</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="pedido-info">
+        <div class="pedido-detalle">
+          <p><strong>Plato:</strong> Pizza Margarita</p>
+          <p><strong>Cantidad:</strong> 2</p>
+          <p><strong>Precio:</strong> $25.00</p>
+        </div>
+        <div class="pedido-detalle">
+          <p><strong>Plato:</strong> Alitas BBQ</p>
+          <p><strong>Cantidad:</strong> 1</p>
+          <p><strong>Precio:</strong> $15.00</p>
+        </div>
+      </div>
+      <ion-item lines="none" class="total">
+        <ion-label><strong>Total:</strong></ion-label>
+        <ion-note slot="end"><strong>$40.00</strong></ion-note>
+      </ion-item>
+      <div class="botones">
+        <ion-button color="success" expand="block" routerLink="details"
+          >Confirmar Pedido</ion-button
+        >
+        <ion-button color="danger" expand="block">Cancelar Pedido</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card collapsible #run1="" *ngIf="selectedSegment === 'pedidos'">
+    <ion-card-header class="ion-card-header">
+      <div>
+        <ion-card-subtitle class="ion-bold ion-txt-s"
+          >27/07/2018</ion-card-subtitle
+        >
+        <div class="ion-bold">FRIDAY AFTERNOON RUN</div>
+        <div class="ion-grid ion-margin ion-txt-muted ion-bold ion-txt-s">
+          <div class="ion-row ion-no-padding">
+            <div class="ion-col">5.43km</div>
+            <div class="ion-col">5'44"/km</div>
+            <div class="ion-col">30:45</div>
+          </div>
+        </div>
+      </div>
+    </ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <img src="https://img.mobiscroll.com/demos/run-1.png" />
+      <div class="ion-btn-group-block">
+        <ion-button class="ion-btn-primary">Ver Detalles</ion-button>
+        <ion-button class="ion-btn-secondary">Navegar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

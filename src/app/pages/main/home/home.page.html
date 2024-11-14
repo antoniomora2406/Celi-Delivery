@@ -1,0 +1,33 @@
+<app-header title="Inicio"></app-header>
+
+<!-- <ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addUpdateProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content> -->
+<ion-content>
+  <google-map
+    height="80%"
+    width="100%"
+  >
+  <div class="status-buttons">
+    <ion-button 
+      [ngClass]="{'available': estado === 'disponible'}" 
+      (click)="cambiarEstado('disponible')" 
+      expand="block" 
+      color="success" href="/main/orders">
+      Disponible
+    </ion-button>
+    
+    <ion-button 
+      [ngClass]="{'not-available': estado === 'no disponible'}" 
+      (click)="cambiarEstado('no disponible')" 
+      expand="block" 
+      color="danger">
+      No Disponible
+    </ion-button>
+  </div></google-map>
+  
+</ion-content>

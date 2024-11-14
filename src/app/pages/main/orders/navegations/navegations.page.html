@@ -1,0 +1,57 @@
+<app-header backbutton="/main/orders" title="Navegación"></app-header>
+
+<ion-content>
+  <google-map height="70%" width="100%">
+    <ion-card-content class="container">
+      <!-- Mensaje de inicio -->
+  <div *ngIf="currentStep === 0" class="welcome-message">
+    <h2>¡Buena suerte en tu entrega!</h2>
+  </div>
+
+  <!-- Contenedor de la barra de progreso con puntos y líneas -->
+  <div class="progress-container" *ngIf="currentStep > 0">
+    <div class="progress-bar">
+      <div class="progress-line" [class.active]="currentStep >= 1"></div>
+      <!-- Punto 1: Recogido -->
+      <div class="progress-point" [class.active]="currentStep >= 2"></div>
+      <!-- Línea 1 -->
+      <div class="progress-line" [class.active]="currentStep >= 2"></div>
+      <!-- Punto 2: En camino -->
+      <div class="progress-point" [class.active]="currentStep >= 3"></div>
+      <!-- Línea 2 -->
+      <div class="progress-line" [class.active]="currentStep >= 3"></div>
+      <!-- Punto 3: Entregado -->
+      <div class="progress-point" [class.active]="currentStep >= 4"></div>
+    </div>
+  </div>
+
+  <!-- Botones para avanzar en el proceso -->
+  <div class="action-button">
+    <!-- Botón para iniciar el viaje -->
+    <ion-button *ngIf="currentStep === 0" (click)="empezarViaje()" expand="block" color="primary" >
+      Empezar viaje
+    </ion-button>
+
+    <!-- Botón para marcar "Recogido" -->
+    <ion-button *ngIf="currentStep === 1" (click)="cambiarEstado('recogido')" expand="block" color="tertiary">
+      Recogido
+    </ion-button>
+
+    <!-- Botón para marcar "En camino" -->
+    <ion-button *ngIf="currentStep === 2" (click)="cambiarEstado('camino')" expand="block" color="warning">
+      En camino
+    </ion-button>
+
+    <!-- Botón para marcar "Entregar" -->
+    <ion-button *ngIf="currentStep === 3" (click)="cambiarEstado('entregado')" expand="block" color="success">
+      Entregar
+    </ion-button>
+
+    <!-- Botón final que indica que el proceso está completo -->
+    <ion-button *ngIf="currentStep === 4" expand="block" color="primary" disabled>
+      Proceso Completo
+    </ion-button>
+  </div>
+    </ion-card-content></google-map
+  >
+</ion-content>

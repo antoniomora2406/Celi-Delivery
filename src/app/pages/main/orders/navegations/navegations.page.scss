@@ -1,0 +1,52 @@
+.welcome-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: var(--ion-color-primary);
+}
+
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  position: relative;
+}
+
+.progress-point {
+  width: 80px;
+  height: 20px;
+  background-color: var(--ion-color-light);
+  border-radius: 50%;
+  border: 3px solid var(--ion-color-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.progress-point.active {
+  background-color: var(--ion-color-primary);
+  border-color: var(--ion-color-primary);
+}
+
+.progress-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--ion-color-light);
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.progress-line.active {
+  background-color: var(--ion-color-primary);
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

@@ -1,0 +1,27 @@
+ion-card-title {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  color: var(--ion-color-primary);
+}
+
+ion-item {
+  --min-height: 60px;
+  margin-bottom: 10px;
+}
+
+ion-button {
+  --border-radius: 20px;
+}
+
+ion-label h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+ion-label p {
+  font-size: 0.9em;
+  color: var(--ion-color-medium);
+}
